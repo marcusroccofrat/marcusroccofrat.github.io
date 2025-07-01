@@ -10,7 +10,7 @@ This work has developed three important components of SDLs for synthesizing and 
 
 ![SDL_layout drawio (2)](https://github.com/user-attachments/assets/607f7afd-36c6-4697-8dce-05347c355017)
 
-### QubeSat
+### QUbeSat
 My undergraduate senior design project in mechanical engineering was designing and fabricating a 3D printed CubeSat with an integrated thermal sensing apparatus. Given that this work was the first foray of Quinnipiac University into space engineering, the entire CubeSat was made from the ground up. I led a team of three other engineers to research CubeSats and review technical documentation, design components such as the frame or housing, electronic power supply system, and communications system with bespoke antenna array. The project was presented at the ASEE Zone I conference at Penn State University and earned an Award for Excellence. 
 
 ![20230503_182451](https://github.com/user-attachments/assets/f3ba7de2-5635-4397-bcca-7a3b0c89e9aa)
