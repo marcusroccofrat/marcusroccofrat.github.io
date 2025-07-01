@@ -6,21 +6,16 @@ body {
   color: #333;
 }
 
-aside {
+header {
   background: #001f3f;
   color: white;
-  width: 200px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
+  text-align: center;
   padding: 2rem;
-  box-sizing: border-box;
 }
 
-aside h1 {
-  margin: 0 0 1rem;
-  font-size: 1.8rem;
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
 }
 
 nav ul {
@@ -29,7 +24,8 @@ nav ul {
 }
 
 nav ul li {
-  margin: 1rem 0;
+  display: inline;
+  margin: 0 1rem;
 }
 
 nav ul li a {
@@ -43,12 +39,8 @@ nav ul li a:hover, nav ul li a.active {
   color: #004080;
 }
 
-main {
-  margin-left: 220px;
-  padding: 2rem;
-}
-
 section {
+  padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -106,29 +98,12 @@ footer {
   padding: 1rem;
   background: #001f3f;
   color: white;
-  margin-left: 220px;
 }
 
 @media (max-width: 600px) {
-  aside {
-    position: static;
-    width: 100%;
-    height: auto;
-    padding: 1rem;
-  }
-
-  main {
-    margin-left: 0;
-    padding: 1rem;
-  }
-
-  footer {
-    margin-left: 0;
-  }
-
   nav ul li {
-    display: inline;
-    margin: 0 0.5rem;
+    display: block;
+    margin: 0.5rem 0;
   }
 
   .profile-image {
