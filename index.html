@@ -7,31 +7,188 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+  <nav id="sidebar" class="sidebar">
+    <button id="close-sidebar" class="close-sidebar">&times;</button>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="sidebar-social">
+      <a href="mailto:mrf6@gatech.edu" title="Email" target="_blank" aria-label="Email">
+        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01L12 13 20 4.01V4H4zm16 2.236l-7.071 7.071a1 1 0 0 1-1.414 0L4 6.236V20h16V6.236z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/marcusfratarcangeli/" title="LinkedIn" target="_blank" aria-label="LinkedIn">
+        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.381-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg>
+      </a>
+      <a href="https://github.com/marcusroccofrat" title="GitHub" target="_blank" aria-label="GitHub">
+        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+  </nav>
   <header>
+    <button id="open-sidebar" class="hamburger" aria-label="Open navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <h1>Marcus Rocco Fratarcangeli</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
   </header>
-
-  <section id="about">
+  <section class="hero" data-animate>
+    <img src="assets/profile.jpg" alt="Marcus Rocco Fratarcangeli Profile Photo" class="profile-image hero-image">
+    <h2 class="typewriter-bg"><span class="typewriter" id="typewriter-text"></span></h2>
+    <p class="hero-subtext">Mechanical Engineering MS | Autonomous Systems | Additive Manufacturing | Machine Learning</p>
+  </section>
+  <section id="about" class="card" data-animate>
     <h2>About Me</h2>
-    <img src="assets/profile.jpg" alt="Marcus Rocco Fratarcangeli Profile Photo" class="profile-image">
     <p>Hello, I am Marcus Rocco Fratarcangeli. I am a mechanical engineering thesis-track master from Georgia Tech with expertise in autonomous systems, additive manufacturing, and machine learning, demonstrated through a self-driving lab for photopolymer synthesis and testing. I am skilled in SolidWorks, Python, and automation, and I excel in designing innovative solutions and collaborating in cross-functional teams to advance technology in autonomous systems, defense, AI, or manufacturing. I developed strong leadership skills from being an executive in several undergraduate clubs and organizations, as well as being an ENGAGES program mentor and Eagle Scout. I enjoy balancing technical innovation with personal growth through powerlifting, reading, and spending quality time with my family.</p>
   </section>
-  <section id="resume"
-    <h2>Resume</h2>
-    <li><a href="assets/marcus_rocco_fratarcangeli_RESUME_06_30_25_g.pdf" target="_blank">Resume</a></li>
+  <section id="skills" class="card" data-animate>
+    <h2>Skills</h2>
+    <div class="skills-text-list">
+      <div class="skills-group">
+        <h3>Technical</h3>
+        <ul>
+          <li>SolidWorks</li>
+          <li>Python</li>
+          <li>Machine Learning</li>
+          <li>Automation</li>
+          <li>Polymer 3D Printing</li>
+          <li>Digital Image Correlation</li>
+          <li>Robotics</li>
+          <li>Arduino</li>
+          <li>MATLAB</li>
+          <li>Metrology</li>
+          <li>Design for Manufacturing</li>
+          <li>Problem Solving</li>
+        </ul>
+      </div>
+      <div class="skills-group">
+        <h3>Software</h3>
+        <ul>
+          <li>Microsoft Excel</li>
+          <li>Microsoft Word</li>
+          <li>Microsoft PowerPoint</li>
+        </ul>
+      </div>
+      <div class="skills-group">
+        <h3>Soft Skills</h3>
+        <ul>
+          <li>Public Speaking / Presentation</li>
+          <li>Project Management</li>
+          <li>Leadership</li>
+        </ul>
+      </div>
+    </div>
   </section>
-
+  <section id="resume" class="card" data-animate>
+    <a href="assets/marcus_rocco_fratarcangeli_RESUME_06_30_25_g.pdf" target="_blank" class="button" style="display:block;text-align:center;max-width:220px;margin:0 auto;">View Resume (PDF)</a>
+    <a href="assets/marcus_rocco_fratarcangeli_RESUME_06_30_25_g.pdf" download class="button" style="display:block;text-align:center;max-width:220px;margin:1rem auto 0 auto;">
+      <svg style="vertical-align:middle;margin-right:0.5em;" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M5 20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H5v2zm7-3a1 1 0 0 1-1-1V7a1 1 0 1 1 2 0v9h3.293a1 1 0 0 1 .707 1.707l-4 4a1 1 0 0 1-1.414 0l-4-4A1 1 0 0 1 8.707 15H12z"/></svg>
+      Download Resume
+    </a>
+  </section>
+  <section id="education" class="card" data-animate>
+    <h2>Education</h2>
+    <div class="edu-entry">
+      <strong>Georgia Institute of Technology</strong> <span class="edu-location">| Atlanta, GA</span><br>
+      <span class="edu-degree">Master of Science in Mechanical Engineering</span> <span class="edu-dates">| August 2023 – August 2025</span><br>
+      Major area: Manufacturing <span class="edu-sep">|</span> Minor area: CAE/Design<br>
+      Cumulative GPA: 3.71/4.0<br>
+      Lab: Active Materials and Additive Manufacturing, Advisor: Dr. H. Jerry Qi<br>
+      Thesis topic: “Self-Driving Lab of Photopolymer Synthesis and Mechanical Testing for Expedited Material Discovery”<br>
+      Coursework: AI/ML for Engineers, Metrology and Measurement Systems, Manufacturing Processes and Systems, Data Foundations for Machine Learning, and more<br>
+    </div>
+    <div class="edu-entry">
+      <strong>Quinnipiac University</strong> <span class="edu-location">| Hamden, CT</span><br>
+      <span class="edu-degree">Bachelor of Science in Mechanical Engineering</span> <span class="edu-dates">| August 2019 – May 2023</span><br>
+      Minors: Entrepreneurship and Mathematics<br>
+      Cumulative GPA: 3.95/4.0 <span class="edu-sep">|</span> Engineering GPA: 4.0/4.0
+    </div>
+  </section>
+  <section id="timeline" class="card" data-animate>
+    <h2>Experience Timeline</h2>
+    <div class="timeline">
+      <div class="timeline-item" data-animate>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>August 2023 - August 2025</h3>
+          <h4>Georgia Institute of Technology - Mechanical Engineering MS</h4>
+          <p>Thesis: "Self-Driving Lab of Photopolymer Synthesis and Mechanical Testing for Expedited Material Discovery"</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-animate>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>August 2022 - May 2023</h3>
+          <h4>Quinnipiac University - Senior Design</h4>
+          <p>Led QUbeSat design and fabrication project, presented at ASEE Zone I conference</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-animate>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>May 2022 - August 2022</h3>
+          <h4>Undergraduate Research Fellow</h4>
+          <p> Researched biocompatible resins with tunable mechanical properties for use in additively manufactured bone scaffolds and seeding stem cell generation with Professor Dazhong Wu</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-animate>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>January 2022 - May 2022</h3>
+          <h4>Danbury Hospital - Undergraduate Research Fellow</h4>
+          <p>Researched endoleaks and endotension in aortic surgical stents and grafts using an enlarged physical artery model and additive manufacturing of several components</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-animate>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>May 2021 - August 2021</h3>
+          <h4>Calspan Corporation - Mechanical Engineering Intern</h4>
+          <p>Designed and fabricated complex instrumentation components for testing scramjet engines, composed an additive manufacturing database from technical documents, and designed high temperature nozzles</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-animate>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>August 2019 - May 2023</h3>
+          <h4>Quinnipiac University - Mechanical Engineering BS</h4>
+          <p>Minors; Mathematics and Entrepreneurship</p>
+          <p>QUbeSat senior design, Outstanding Achievement in Mechanical Engineering Award, Vice President of Engineering Honor Society, Vice President of Club Powerlifting team</p>
+          <p>GPA: 3.95/4.00</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="honors" class="card" data-animate>
+    <h2>Honors, Awards & Certifications</h2>
+    <ul>
+      <li>NCEES Fundamentals of Engineering (FE) Exam Passed (2024)</li>
+      <li>Award for Excellence, ASEE Zone I Conference (2023)</li>
+      <li>Dassault Systems SolidWorks Associate Mechanical Design (2023)</li>
+      <li>Dean's List, Quinnipiac University (all semesters)</li>
+    </ul>
+  </section>
+  <section id="involvement" class="card" data-animate>
+    <h2>Campus & Community Involvement</h2>
+    <ul>
+      <li>Georgia Tech ENGAGES Program Mentor (May 2024 - May 2025)</li>
+      <li>Vice President of Engineering Honor Society (August 2022 - May 2023)</li>
+      <li>Vice President of Club Powerlifting Team (August 2022 - May 2023)</li>
+      <li>Volunteer, Quinnipiac University Big Event (August 2021 - May 2023)</li>
+      <li>Eagle Scout, Boy Scouts of America (2018)</li>
+    </ul>
+  </section>
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </button>
   <footer>
     <p>© 2025 Marcus Rocco Fratarcangeli. All rights reserved.</p>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
