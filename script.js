@@ -1,12 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Toggle project description visibility
-  document.querySelectorAll('.project h3').forEach(header => {
-    header.addEventListener('click', () => {
-      const content = header.nextElementSibling;
-      content.style.display = content.style.display === 'none' ? 'block' : 'none';
-    });
-  });
-
   // Lazy load images and videos
   const images = document.querySelectorAll('img[data-src]');
   const videos = document.querySelectorAll('video source[data-src]');
