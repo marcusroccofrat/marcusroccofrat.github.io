@@ -3,19 +3,24 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  color: #101010;
+  color: #333;
 }
 
-header {
-  background: #023161;
+aside {
+  background: #001f3f;
   color: white;
-  text-align: center;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
   padding: 2rem;
+  box-sizing: border-box;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
+aside h1 {
+  margin: 0 0 1rem;
+  font-size: 1.8rem;
 }
 
 nav ul {
@@ -24,8 +29,7 @@ nav ul {
 }
 
 nav ul li {
-  display: inline;
-  margin: 0 1rem;
+  margin: 1rem 0;
 }
 
 nav ul li a {
@@ -34,20 +38,38 @@ nav ul li a {
   font-weight: bold;
 }
 
-nav ul li a:hover {
+nav ul li a:hover, nav ul li a.active {
   text-decoration: underline;
+  color: #004080;
+}
+
+main {
+  margin-left: 220px;
+  padding: 2rem;
 }
 
 section {
-  padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
 }
 
 h2 {
-  color: #023161;
-  border-bottom: 2px solid #023161;
+  color: #001f3f;
+  border-bottom: 2px solid #001f3f;
   padding-bottom: 0.5rem;
+}
+
+h3 {
+  color: #001f3f;
+  margin-top: 1.5rem;
+}
+
+.profile-image {
+  max-width: 150px;
+  height: auto;
+  border-radius: 50%;
+  margin: 1rem 0;
+  display: block;
 }
 
 .project {
@@ -60,51 +82,53 @@ h2 {
   margin-top: 1rem;
 }
 
-.skills-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.skills-container div {
-  width: 45%;
-}
-
-ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
+.project-video {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
 }
 
 a {
-  color: #2980b9;
+  color: #004080;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+  color: #001f3f;
 }
 
 footer {
   text-align: center;
   padding: 1rem;
-  background: #023161;
+  background: #001f3f;
   color: white;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+  margin-left: 220px;
 }
 
 @media (max-width: 600px) {
-  nav ul li {
-    display: block;
-    margin: 0.5rem 0;
-  }
-
-  .skills-container {
-    flex-direction: column;
-  }
-
-  .skills-container div {
+  aside {
+    position: static;
     width: 100%;
-    margin-bottom: 1rem;
+    height: auto;
+    padding: 1rem;
+  }
+
+  main {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  footer {
+    margin-left: 0;
+  }
+
+  nav ul li {
+    display: inline;
+    margin: 0 0.5rem;
+  }
+
+  .profile-image {
+    max-width: 100px;
   }
 }

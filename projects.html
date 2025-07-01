@@ -1,43 +1,4 @@
-<script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
-
-                // Convert sheet to JSON to filter blank rows
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
-                var filteredData = jsonData.filter(row => row.some(filledCell));
-
-                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                // Fallback
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
-
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-        </script><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -52,6 +13,8 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="sdl.html">SDL</a></li>
+        <li><a href="qubesat.html">QUbeSat</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -60,20 +23,12 @@
   <section id="projects">
     <h2>Projects</h2>
     <div class="project">
-      <h3>Self-driving Lab (SDL)</h3>
-      <p>During my time at Georgia Tech in the Active Materials and Additive Manufacturing laboratory, led by Dr. Jerry Qi, my thesis project was: "Self-driving lab of photopolymer synthesis and mechanical testing for expedited materials discovery." This work developed three key components of SDLs for synthesizing and testing photopolymers:</p>
-      <ul>
-        <li>Preparation of photopolymer inks using a robotic arm, closed-loop liquid dispensing system for monomers/crosslinkers, and powder dispenser for photoinitiators.</li>
-        <li>Curing photopolymer inks with a custom rheological sensor to determine time, temperature, and speed of curing.</li>
-        <li>Automated tensile testing on tensile bars using a robotic arm, force sensor, and automated clamp, with cameras for anomaly detection via machine learning and digital image correlation for sample dimensions.</li>
-      </ul>
-      <p>Automated data processing and property extraction calculated material properties like modulus of elasticity, elongation, and tensile strength. Active collaboration for the active learning aspect can be found <a href="https://github.com/ajain300/Autonomous-Thermoset-Discovery">here</a>.</p>
-      <img src="assets/SDL_layout.png" alt="SDL Layout" class="project-image">
+      <h3><a href="sdl.html">Self-driving Lab (SDL)</a></h3>
+      <p>Developed a self-driving lab for photopolymer synthesis and mechanical testing at Georgia Tech, focusing on automated ink preparation, curing, and tensile testing. Paired with an active learning algorithm, the SDL can efficiently collect photopolymer data faster than a human. <a href="sdl.html">View details</a>.</p>
     </div>
     <div class="project">
-      <h3>QUbeSat</h3>
-      <p>My undergraduate senior design project in mechanical engineering was designing and fabricating a 3D printed CubeSat with an integrated thermal sensing apparatus. As the first foray of Quinnipiac University into space engineering, the entire CubeSat was built from the ground up. I led a team of three other engineers to research CubeSats, review technical documentation, and design components such as the frame, electronic power supply system, and communications system with a bespoke antenna array. The project was presented at the ASEE Zone I conference at Penn State University and earned an Award for Excellence.</p>
-      <img src="assets/qubesat.jpg" alt="QUbeSat" class="project-image">
+      <h3><a href="qubesat.html">QUbeSat</a></h3>
+      <p>Led the design and fabrication of a 3D-printed CubeSat with thermal sensing for Quinnipiac University, presented at ASEE Zone I and awarded for excellence. <a href="qubesat.html">View details</a>.</p>
     </div>
   </section>
 

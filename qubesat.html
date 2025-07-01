@@ -1,0 +1,83 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcus Rocco Fratarcangeli - QUbeSat</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Marcus Rocco Fratarcangeli</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="sdl.html">SDL</a></li>
+        <li><a href="qubesat.html" class="active">QUbeSat</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="qubesat">
+    <h2>QUbeSat</h2>
+    <p>My undergraduate senior design project in mechanical engineering was designing and fabricating a 3D printed CubeSat with an integrated thermal sensing apparatus. As the first foray of Quinnipiac University into space engineering, the entire CubeSat was built from the ground up. I led a team of three other engineers to research CubeSats, review technical documentation, and design components such as the frame, electronic power supply system, and communications system with a bespoke antenna array. The project was presented at the ASEE Zone I conference at Penn State University and earned an Award for Excellence.</p>
+    <h3>Media and Documents</h3>
+    <ul>
+      <li><a href="projects/qubesat/QUbeSat_Single_Slide_Summary.pdf" target="_blank">Project Summary (PDF)</a></li>
+      <li><a href="projects/qubesat/QUbeSat_Final_Design_Report.pdf" target="_blank">Full Report (PDF)</a></li>
+      <li><a href="projects/qubesat/QUbeSat_Final_Presentation.pdf" target="_blank">Presentation Slides (PDF)</a></li>
+      <li><a href="projects/qubesat/QUbeSat_Final_Poster.pdf" target="_blank">Conference Poster (PDF)</a></li>
+    </ul>
+    <img src="projects/qubesat/cubesat_real_photo.jpg" alt="QUbeSat Prototype" class="project-image">
+    <img src="projects/qubesat/team_w_poster.jpg" alt="QUbeSat Team at Conference" class="project-image">
+    <img src="projects/qubesat/team_w_awards.JPG" alt="QUbeSat Team with Awards" class="project-image">
+  </section>
+
+  <footer>
+    <p>© 2025 Marcus Rocco Fratarcangeli. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

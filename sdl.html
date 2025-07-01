@@ -1,0 +1,98 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcus Rocco Fratarcangeli - Self-driving Lab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Marcus Rocco Fratarcangeli</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="sdl.html" class="active">SDL</a></li>
+        <li><a href="qubesat.html">QUbeSat</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="sdl">
+    <h2>Self-driving Lab (SDL)</h2>
+    <p>During my time at Georgia Tech in the Active Materials and Additive Manufacturing laboratory, led by Dr. Jerry Qi, my thesis project was: "Self-driving lab of photopolymer synthesis and mechanical testing for expedited materials discovery." This work developed three key components:</p>
+    <ul>
+      <li>Preparation of photopolymer inks using a robotic arm, closed-loop liquid dispensing system for monomers/crosslinkers, and powder dispenser for photoinitiators.</li>
+      <li>Curing photopolymer inks with a custom rheological sensor to determine time, temperature, and speed of curing.</li>
+      <li>Automated tensile testing on tensile bars using a robotic arm, force sensor, and automated clamp, with cameras for anomaly detection via machine learning and digital image correlation for sample dimensions.</li>
+    </ul>
+    <p>Automated data processing and property extraction calculated material properties like modulus of elasticity, elongation, and tensile strength. Active collaboration for the active learning aspect can be found <a href="https://github.com/ajain300/Autonomous-Thermoset-Discovery" target="_blank">here</a>.</p>
+    <h3>Media and Documents</h3>
+    <ul>
+      <li><a href="projects/self_driving_lab/thesis_summary.pdf" target="_blank">Thesis Summary (PDF)</a></li>
+      <li><a href="projects/self_driving_lab/thesis_presentation_FINAL_6_25_25.pdf" target="_blank">Thesis Slides (PDF)</a></li>
+    </ul>
+    <img src="projects/self_driving_lab/SDL_layout.png" alt="Self-driving Lab Layout" class="project-image">
+    <img src="projects/self_driving_lab/SDL_hardware.jpg" alt="Self-driving Lab Hardware" class="project-image">
+    <video controls class="project-video1">
+      <source src="projects/self_driving_lab/material_composition_demo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video controls class="project-video2">
+      <source src="projects/self_driving_lab/curing_testing_demo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video controls class="project-video3">
+      <source src="projects/self_driving_lab/tensile_testing_demo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <footer>
+    <p>© 2025 Marcus Rocco Fratarcangeli. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
