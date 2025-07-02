@@ -158,4 +158,28 @@ document.addEventListener('DOMContentLoaded', () => {
       behavior: 'smooth'
     });
   });
+
+  // Lightbox for design images (designs.html)
+  const designLightbox = document.getElementById('design-lightbox');
+  if (designLightbox) {
+    const designLightboxImg = designLightbox.querySelector('img');
+    const designLightboxClose = designLightbox.querySelector('.lightbox-close');
+    document.querySelectorAll('.design-card img').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => {
+        designLightboxImg.src = img.src;
+        designLightbox.classList.add('active');
+      });
+    });
+    designLightboxClose.addEventListener('click', () => {
+      designLightbox.classList.remove('active');
+      designLightboxImg.src = '';
+    });
+    designLightbox.addEventListener('click', e => {
+      if (e.target === designLightbox) {
+        designLightbox.classList.remove('active');
+        designLightboxImg.src = '';
+      }
+    });
+  }
 });
