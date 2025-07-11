@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const typewriterText = document.getElementById('typewriter-text');
   if (typewriterText) {
     const phrases = [
-      'Mechanical Engineering MS Student',
+      'Mechanical Engineering MS Graduate',
       'Self-driving Lab Researcher',
       'Autonomous Systems Enthusiast',
       'Additive Manufacturing Specialist',
