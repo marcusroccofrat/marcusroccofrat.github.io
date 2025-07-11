@@ -164,13 +164,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if (designLightbox) {
     const designLightboxImg = designLightbox.querySelector('img');
     const designLightboxClose = designLightbox.querySelector('.lightbox-close');
-    document.querySelectorAll('.design-card img').forEach(img => {
-      img.style.cursor = 'zoom-in';
-      img.addEventListener('click', () => {
-        designLightboxImg.src = img.src;
-        designLightbox.classList.add('active');
-      });
-    });
+    
+    // Global function for onclick handlers
+    window.openLightbox = function(src, alt) {
+      designLightboxImg.src = src;
+      designLightboxImg.alt = alt;
+      designLightbox.classList.add('active');
+    };
+    
     designLightboxClose.addEventListener('click', () => {
       designLightbox.classList.remove('active');
       designLightboxImg.src = '';

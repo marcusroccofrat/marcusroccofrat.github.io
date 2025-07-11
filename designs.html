@@ -52,18 +52,34 @@
     <section id="design-gallery" class="card" data-animate>
       <h2>Design Gallery</h2>
       <div class="designs-grid">
-        <!-- Sample card: Replace with your own images and descriptions -->
+        <!-- SDL System Design -->
         <div class="design-card">
           <figure>
-            <img src="designs/CubeSat.PNG" alt="CAD Rendering" class="design-image-large">
+            <img src="designs/SDL_electrical.drawio.png" alt="SDL Electrical System" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
+            <figcaption>SDL electrical system architecture and control layout</figcaption>
+          </figure>
+          <figure>
+            <img src="designs/SDL_hardware_layout.png" alt="SDL Hardware Layout" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
+            <figcaption>SDL hardware layout and workflow design</figcaption>
+          </figure>
+          <div class="design-desc">
+            <h3>Self-Driving Lab (SDL) System Design</h3>
+            <p>Comprehensive system design from electrical architecture to hardware layout. Designed and implemented the complete self-driving lab system including electrical systems, sensor integration, multi-Arduino control system, and process flow optimization. The system integrates material composition, curing analysis, and tensile testing in an automated workflow. See the self-driving lab project page for more details.</p>
+          </div>
+        </div>
+        
+        <!-- QUbeSat Hardware -->
+        <div class="design-card">
+          <figure>
+            <img src="designs/CubeSat.PNG" alt="CAD Rendering" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
             <figcaption>CAD rendering of QUbeSat exploded view</figcaption>
           </figure>
           <figure>
-            <img src="designs/iso deployed.png" alt="CAD Rendering" class="design-image-large">
+            <img src="designs/iso deployed.png" alt="CAD Rendering" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
             <figcaption>CAD rendering of QUbeSat isometric view</figcaption>
           </figure>
           <figure>
-            <img src="designs/cubesat_real_photo.jpg" alt="Real Part" class="design-image-large">
+            <img src="designs/cubesat_real_photo.jpg" alt="Real Part" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
             <figcaption>Real photo of QUbeSat assembled</figcaption>
           </figure>
           <div class="design-desc">
@@ -71,83 +87,57 @@
             <p>Bespoke CubeSat hardware with optimized geometry for additive manufacturing. See QUbeSat project page for more details.</p>
           </div>
         </div>
+        
+        <!-- Custom Robot Gripper -->
         <div class="design-card">
           <figure>
-            <img src="designs/robot_gripper_iso.png" alt="CAD Rendering" class="design-image">
+            <img src="designs/robot_gripper_iso.png" alt="CAD Rendering" class="design-image" onclick="openLightbox(this.src, this.alt)">
             <figcaption>CAD rendering of custom robot gripper isometric view</figcaption>
           </figure>
           <figure>
-            <img src="designs/robot_gripper_real.jpg" alt="Real Part" class="design-image">
+            <img src="designs/robot_gripper_real.jpg" alt="Real Part" class="design-image" onclick="openLightbox(this.src, this.alt)">
             <figcaption>Real implementation of custom robot gripper</figcaption>
           </figure>
           <figure>
-            <img src="designs/robot_gripper_side.png" alt="CAD Rendering" class="design-image">
+            <img src="designs/robot_gripper_side.png" alt="CAD Rendering" class="design-image" onclick="openLightbox(this.src, this.alt)">
             <figcaption>CAD rendering of custom robot gripper side view</figcaption>
           </figure>
           <figure>
-            <img src="designs/robot_gripper_front.png" alt="CAD Rendering" class="design-image">
+            <img src="designs/robot_gripper_front.png" alt="CAD Rendering" class="design-image" onclick="openLightbox(this.src, this.alt)">
             <figcaption>CAD rendering of custom robot gripper front view</figcaption>
           </figure>
           <div class="design-desc">
             <h3>Custom Robot Gripper</h3>
             <p>Custom robot gripper designed to pick and place parts in the material composition system of the self-driving lab. The gripper uses a servo motor to manipulate the gripper fingers and is programmed through an Arduino. See the self-driving lab project page for a video demonstration.</p>
+            <p><a href="robot-gripper-process.html">View detailed design process and iterations →</a></p>
           </div>
         </div>
-        <!-- New empty design card 1 -->
+        
+        <!-- Curing Time System Testing Platform -->
         <div class="design-card">
           <figure>
-            <img src="designs/tall_rake_iso.png" alt="CAD Rendering" class="design-image">
-            <figcaption>CAD rendering of mass flow plug (MFP) rake</figcaption>
-          </figure>
-          <figure>
-            <img src="designs/tall_rake_front_water.png" alt="CAD Rendering" class="design-image">
-            <figcaption>CAD rendering of MFP rake with cross-section of water cooling channel</figcaption>
-          </figure>
-          <figure>
-            <img src="designs/tall_rake_side_air.png" alt="CAD Rendering" class="design-image">
-            <figcaption>CAD rendering of MFP rake with cross-section of air flow channels</figcaption>
-          </figure>
-          <div class="design-desc">
-            <h3>Mass Flow Plug (MFP) Rake 1</h3>
-            <p>MFP rakes designed to measure the output of scramjet engines durign testing. Water cooling channels integrated to withstand high temperatures. 3D printed out of copper because of complex geometries and thermal conductivity.</p>
-          </div>
-        </div>
-        <!-- New empty design card 2 -->
-        <div class="design-card">
-          <figure>
-            <img src="designs/short_rake_iso.png" alt="CAD Rendering" class="design-image-large">
-            <figcaption>CAD rendering of MFP rake, alternate version</figcaption>
-          </figure>
-          <figure>
-            <img src="designs/short_rake_side.png" alt="CAD Rendering" class="design-image-large">
-            <figcaption>CAD rendering of alternate MFP rake with cross-section of air flow channels and water cooling channels</figcaption>
-          </figure>
-          <div class="design-desc">
-            <h3>MFP Rake 2</h3>
-            <p>Alternative MFP rake with more complex water and air flow channels. In addition, a thermocouple is integrated to measure the temperature during testing.</p>
-          </div>
-        </div>
-        <div class="design-card">
-          <figure>
-            <img src="designs/cts_platform.png" alt="CAD Rendering" class="design-image-large">
+            <img src="designs/cts_platform.png" alt="CAD Rendering" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
             <figcaption>CAD rendering of curing time system platform isometric view</figcaption>
           </figure>
           <figure>
-            <img src="designs/cts_real.jpg" alt="Real Part" class="design-image-large">
+            <img src="designs/cts_real.jpg" alt="Real Part" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
             <figcaption>Real implementation of the curing time system platform</figcaption>
           </figure>
           <div class="design-desc">
             <h3>Curing Time System Testing Platform</h3>
             <p>The curing time system platform is designed to test the curing properties of photopolymer inks as a part of the self-driving lab. Springs compress the two hands to secure a container of photopolymer ink. There are also integrated UV LEDs which are used to cure the ink. See the self-driving lab project page for more details and a video demonstration.</p>
+            <p><a href="cts-platform-process.html">View detailed design process and iterations →</a></p>
           </div>
         </div>
+        
+        <!-- Automated Tensile Testing Gripper -->
         <div class="design-card">
           <figure>
-            <img src="designs/att_gripper.png" alt="CAD Rendering" class="design-image-large">
+            <img src="designs/att_gripper.png" alt="CAD Rendering" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
             <figcaption>CAD rendering of automated tensile testing gripper</figcaption>
           </figure>
           <figure>
-            <img src="designs/att_real.jpg" alt="Real Part" class="design-image-large">
+            <img src="designs/att_real.jpg" alt="Real Part" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
             <figcaption>Real implementation of the automated tensile testing gripper</figcaption>
           </figure>
           <div class="design-desc">
@@ -155,18 +145,57 @@
             <p>The automated tensile testing gripper is designed to secure the bottom half of the tensile bars during testing. It uses a stepper motor and lead screw to linearly move the grips. See the self-driving lab project page for more details and a video demonstration.</p>
           </div>
         </div>
+        
+        <!-- Powder Dispenser -->
         <div class="design-card">
           <figure>
-            <img src="designs/powder_dispenser.png" alt="CAD Rendering" class="design-image-large">
+            <img src="designs/powder_dispenser.png" alt="CAD Rendering" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
             <figcaption>CAD rendering of custom powder dispenser</figcaption>
           </figure>
           <figure>
-            <img src="designs/powder_dispenser.gif" alt="Real Part" class="design-image-large">
+            <img src="designs/powder_dispenser.gif" alt="Real Part" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
             <figcaption>Real implementation of the powder dispenser</figcaption>
           </figure>
           <div class="design-desc">
             <h3>Powder Dispenser</h3>
             <p>The powder dispenser is designed to dispense photoinitiators into photopolymer inks during the processing portion of the self-driving lab. The system uses a stepper motor to turn gears that allow powder to be dispensed. The speed of the motor and the number of revolutions determine the amount of powder dispensed. See the self-driving lab project page for more details.</p>
+            <p><a href="powder-dispenser-process.html">View detailed design process and iterations →</a></p>
+          </div>
+        </div>
+        
+        <!-- Mass Flow Plug (MFP) Rake 1 -->
+        <div class="design-card">
+          <figure>
+            <img src="designs/tall_rake_iso.png" alt="CAD Rendering" class="design-image" onclick="openLightbox(this.src, this.alt)">
+            <figcaption>CAD rendering of mass flow plug (MFP) rake</figcaption>
+          </figure>
+          <figure>
+            <img src="designs/tall_rake_front_water.png" alt="CAD Rendering" class="design-image" onclick="openLightbox(this.src, this.alt)">
+            <figcaption>CAD rendering of MFP rake with cross-section of water cooling channel</figcaption>
+          </figure>
+          <figure>
+            <img src="designs/tall_rake_side_air.png" alt="CAD Rendering" class="design-image" onclick="openLightbox(this.src, this.alt)">
+            <figcaption>CAD rendering of MFP rake with cross-section of air flow channels</figcaption>
+          </figure>
+          <div class="design-desc">
+            <h3>Mass Flow Plug (MFP) Rake 1</h3>
+            <p>MFP rakes designed to measure the output of scramjet engines durign testing. Water cooling channels integrated to withstand high temperatures. 3D printed out of copper because of complex geometries and thermal conductivity.</p>
+          </div>
+        </div>
+        
+        <!-- MFP Rake 2 -->
+        <div class="design-card">
+          <figure>
+            <img src="designs/short_rake_iso.png" alt="CAD Rendering" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
+            <figcaption>CAD rendering of MFP rake, alternate version</figcaption>
+          </figure>
+          <figure>
+            <img src="designs/short_rake_side.png" alt="CAD Rendering" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
+            <figcaption>CAD rendering of alternate MFP rake with cross-section of air flow channels and water cooling channels</figcaption>
+          </figure>
+          <div class="design-desc">
+            <h3>MFP Rake 2</h3>
+            <p>Alternative MFP rake with more complex water and air flow channels. In addition, a thermocouple is integrated to measure the temperature during testing.</p>
           </div>
         </div>
       </div>
@@ -180,11 +209,13 @@
       <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
     </svg>
   </button>
-  <!-- Lightbox modal for design images -->
+  
+  <!-- Lightbox for design images -->
   <div id="design-lightbox" class="lightbox">
     <button class="lightbox-close">&times;</button>
     <img src="" alt="Enlarged design image">
   </div>
+  
   <script src="script.js"></script>
 </body>
 </html> 

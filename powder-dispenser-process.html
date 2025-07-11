@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Powder Dispenser Design Process | Marcus Rocco Fratarcangeli Portfolio</title>
+  <meta name="description" content="Detailed design process and iterations for the automated powder dispenser project.">
+  <meta name="keywords" content="Marcus Rocco Fratarcangeli, powder dispenser, design process, iterations, CAD, prototyping, portfolio">
+  <meta name="author" content="Marcus Rocco Fratarcangeli">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+  <nav id="sidebar" class="sidebar">
+    <button id="close-sidebar" class="close-sidebar">&times;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="designs.html">Designs</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="sidebar-social">
+      <a href="mailto:mrf6@gatech.edu" title="Email" target="_blank" aria-label="Email">
+        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01L12 13 20 4.01V4H4zm16 2.236l-7.071 7.071a1 1 0 0 1-1.414 0L4 6.236V20h16V6.236z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/marcusfratarcangeli/" title="LinkedIn" target="_blank" aria-label="LinkedIn">
+        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.381-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg>
+      </a>
+    </div>
+  </nav>
+  <header>
+    <button id="open-sidebar" class="hamburger" aria-label="Open navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <h1>Marcus Rocco Fratarcangeli</h1>
+  </header>
+  
+  <main>
+    <section class="card" data-animate>
+      <div class="process-header">
+        <a href="designs.html" class="back-link">← Back to Designs</a>
+        <h2>Powder Dispenser Design Process</h2>
+        <p class="process-intro">A detailed look at the iterative design process for the automated powder dispensing system.</p>
+      </div>
+      
+      <div class="process-timeline">
+        <div class="process-step" data-animate>
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Initial Concept Design</h3>
+            <img src="designs/powder_dispener_sketch.png" alt="Initial Concept" class="step-image">
+            <p>Initial sketch exploring the stepper motor powder dispensing mechanism. This concept established the basic geometry and component layout for automated powder dispensing in the self-driving lab.</p>
+          </div>
+        </div>
+        
+        <div class="process-step" data-animate>
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>First CAD Iteration</h3>
+            <img src="designs/powder_dispenser.png" alt="First CAD Iteration" class="step-image">
+            <p>Initial CAD design to bring the sketch to life. The stepper motor was chosen because of the control capabilities. Some limitations were found with the gears 3D printability and the funnel being too rough.</p>
+          </div>
+        </div>
+        
+        <div class="process-step" data-animate>
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Prototype Testing</h3>
+            <img src="designs/powder_dispenser.gif" alt="Prototype Testing" class="step-image">
+            <p>Dispenser testing with updated gears and the addition of a vibrating motor to allow the powder to flow out of the funnel.</p>
+          </div>
+        </div>
+        
+        <div class="process-step final-result" data-animate>
+          <div class="step-number">✓</div>
+          <div class="step-content">
+            <h3>Final Implementation and Modeling</h3>
+            <img src="designs/powder2.png" alt="Final Implementation" class="step-image">
+            <p>The completed powder dispenser successfully integrated into the self-driving lab's material composition system. The relationship between the stepper motor gear speed and the amount of powder dispensed was tested and modeled to allow interpolation of any powder amount.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="process-summary" data-animate>
+        <h3>Key Learnings</h3>
+        <ul>
+          <li><strong>Mechanism Design:</strong> Stepper motor driven systems required careful adjustments for consistent performance</li>
+          <li><strong>Material Compatibility:</strong> Different powder types would have different flow rates and would require different models</li>
+          <li><strong>Automation Integration:</strong> Final design successfully integrated with lab automation systems to allow for the powder to be dispensed in a controlled manner.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>© 2025 Marcus Rocco Fratarcangeli. All rights reserved.</p>
+  </footer>
+  
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </button>
+  
+  <script src="script.js"></script>
+</body>
+</html> 
