@@ -37,10 +37,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const sidebarOverlay = document.getElementById('sidebar-overlay');
   const openSidebarBtn = document.getElementById('open-sidebar');
   const closeSidebarBtn = document.getElementById('close-sidebar');
+  const hamburgerCallout = document.getElementById('hamburger-callout');
+
+  if (openSidebarBtn && hamburgerCallout) {
+    openSidebarBtn.addEventListener('click', () => {
+      hamburgerCallout.style.display = 'none';
+    });
+  }
 
   function openSidebar() {
     sidebar.classList.add('open');
     sidebarOverlay.classList.add('open');
+    // Removed hideHamburgerCallout();
   }
   function closeSidebar() {
     sidebar.classList.remove('open');

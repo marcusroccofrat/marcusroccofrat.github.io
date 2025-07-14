@@ -25,7 +25,7 @@
   <div id="sidebar-overlay" class="sidebar-overlay"></div>
   <nav id="sidebar" class="sidebar">
     <button id="close-sidebar" class="close-sidebar">&times;</button>
-    <div class="sidebar-nav-spacer"></div>
+    <div class="sidebar-spacer"></div>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
@@ -55,6 +55,17 @@
       <div class="designs-grid">
         <!-- SDL System Design -->
         <div class="design-card">
+          <div class="design-tags">
+            <span class="design-tag">Python</span>
+            <span class="design-tag">Arduino</span>
+            <span class="design-tag">Raspberry Pi</span>
+            <span class="design-tag">Multi-microcontroller</span>
+            <span class="design-tag">Sensor Networks</span>
+            <span class="design-tag">Process Automation</span>
+            <span class="design-tag">Electrical Design</span>
+            <span class="design-tag">Robotics</span>
+            <span class="design-tag">Machine Vision/Learning</span>
+          </div>
           <figure>
             <img src="designs/SDL_electrical.drawio.png" alt="SDL Electrical System" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
             <figcaption>SDL electrical system architecture and control layout</figcaption>
@@ -65,32 +76,48 @@
           </figure>
           <div class="design-desc">
             <h3>Self-Driving Lab (SDL) System Design</h3>
-            <p>Comprehensive system design from electrical architecture to hardware layout. Designed and implemented the complete self-driving lab system including electrical systems, sensor integration, multi-Arduino control system, and process flow optimization. The system integrates material composition, curing analysis, and tensile testing in an automated workflow. See the self-driving lab project page for more details.</p>
+            <p>Comprehensive system design from electrical architecture to hardware layout. I designed, assembled, and programmed the entire self-driving lab system—including all hardware, electronics, and software (except the active learning algorithm). The SDL integrates Python, Arduino, sensor networks, and multi-microcontroller control for automated material composition, curing analysis, and tensile testing. The system is fully operational and actively used for research at Georgia Tech.</p>
+            <div style="margin-top:1.2rem;"><strong>See <a href="sdl.html">SDL project page</a> for more details and demonstrations.</strong></div>
           </div>
         </div>
-        
-        <!-- QUbeSat Hardware -->
+        <!-- Closed loop PID Liquid Dispensing System -->
         <div class="design-card">
+          <div class="design-tags">
+            <span class="design-tag">Arduino</span>
+            <span class="design-tag">PID Control</span>
+            <span class="design-tag">Peristaltic Pumps</span>
+            <span class="design-tag">Stepper Motors</span>
+            <span class="design-tag">Sensor Feedback</span>
+            <span class="design-tag">Rapid Prototyping</span>
+          </div>
           <figure>
-            <img src="designs/CubeSat.PNG" alt="CAD Rendering" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
-            <figcaption>CAD rendering of QUbeSat exploded view</figcaption>
+            <img src="designs/liquid_dispensing.drawio.png" alt="Liquid Dispensing System Schematic" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
+            <figcaption>Schematic of the liquid dispensing loop</figcaption>
           </figure>
           <figure>
-            <img src="designs/iso deployed.png" alt="CAD Rendering" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
-            <figcaption>CAD rendering of QUbeSat isometric view</figcaption>
+            <img src="designs/liquid_real.jpg" alt="Liquid Dispensing System Real" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
+            <figcaption>Real-world implementation of the liquid dispensing system</figcaption>
           </figure>
           <figure>
-            <img src="designs/cubesat_real_photo.jpg" alt="Real Part" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
-            <figcaption>Real photo of QUbeSat assembled</figcaption>
+            <img src="designs/liquid1.png" alt="Liquid Dispensing System" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
+            <figcaption>Residual plot of the liquid dispensing system testing</figcaption>
           </figure>
           <div class="design-desc">
-            <h3>QUbeSat Hardware</h3>
-            <p>Bespoke CubeSat hardware with optimized geometry for additive manufacturing. See QUbeSat project page for more details.</p>
+            <h3>Closed loop PID Liquid Dispensing System</h3>
+            <p>Automated liquid dispensing platform featuring closed-loop PID control for precise volume delivery. The purpose is to dispense specific amounts of liquid monomer and crosslinker for the self-driving lab.This system uses an Arduino, peristaltic pumps, stepper motor drivers, and real-time sensor feedback to achieve high accuracy and repeatability.</p>
           </div>
         </div>
         
         <!-- Custom Robot Gripper -->
         <div class="design-card">
+          <div class="design-tags">
+            <span class="design-tag">Arduino</span>
+            <span class="design-tag">Servo Motor</span>
+            <span class="design-tag">Mechanical Design</span>
+            <span class="design-tag">Rapid Prototyping</span>
+            <span class="design-tag">Automation</span>
+            <span class="design-tag">End Effector</span>
+          </div>
           <figure>
             <img src="designs/robot_gripper_iso.png" alt="CAD Rendering" class="design-image" onclick="openLightbox(this.src, this.alt)">
             <figcaption>CAD rendering of custom robot gripper isometric view</figcaption>
@@ -114,8 +141,43 @@
           </div>
         </div>
         
+        <!-- Powder Dispenser -->
+        <div class="design-card">
+          <div class="design-tags">
+            <span class="design-tag">Stepper Motor</span>
+            <span class="design-tag">Arduino</span>
+            <span class="design-tag">Hardware Design</span>
+            <span class="design-tag">Process Automation</span>
+            <span class="design-tag">Calibration</span>
+          </div>
+          <figure>
+            <img src="designs/powder_dispenser.png" alt="CAD Rendering" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
+            <figcaption>CAD rendering of custom powder dispenser</figcaption>
+          </figure>
+          <figure>
+            <img src="designs/powder_dispenser.gif" alt="Real Part" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
+            <figcaption>Real implementation of the powder dispenser</figcaption>
+          </figure>
+          <figure>
+            <img src="designs/powder2.png" alt="Result Plot" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
+            <figcaption>Curve fit for speed and dispensed mass for interpolation of powder dispensing</figcaption>
+          </figure>
+          <div class="design-desc">
+            <h3>Powder Dispenser</h3>
+            <p>The powder dispenser is designed to dispense photoinitiators into photopolymer inks during the processing portion of the self-driving lab. The system uses a stepper motor to turn gears that allow powder to be dispensed. The speed of the motor and the number of revolutions determine the amount of powder dispensed. See the self-driving lab project page for more details.</p>
+            <p><a href="powder-dispenser-process.html" class="design-process-link">View detailed design process and iterations →</a></p>
+          </div>
+        </div>
+        
         <!-- Curing Time System Testing Platform -->
         <div class="design-card">
+          <div class="design-tags">
+            <span class="design-tag">Spring Design</span>
+            <span class="design-tag">Mechanical Design</span>
+            <span class="design-tag">Process Automation</span>
+            <span class="design-tag">Rapid Prototyping</span>
+            <span class="design-tag">Testing Platform</span>
+          </div>
           <figure>
             <img src="designs/cts_platform.png" alt="CAD Rendering" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
             <figcaption>CAD rendering of curing time system platform isometric view</figcaption>
@@ -133,6 +195,13 @@
         
         <!-- Automated Tensile Testing Gripper -->
         <div class="design-card">
+          <div class="design-tags">
+            <span class="design-tag">Stepper Motor</span>
+            <span class="design-tag">Rotary/Linear Motion</span>
+            <span class="design-tag">Mechanical Design</span>
+            <span class="design-tag">Automation</span>
+            <span class="design-tag">Testing</span>
+          </div>
           <figure>
             <img src="designs/att_gripper.png" alt="CAD Rendering" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
             <figcaption>CAD rendering of automated tensile testing gripper</figcaption>
@@ -147,25 +216,17 @@
           </div>
         </div>
         
-        <!-- Powder Dispenser -->
-        <div class="design-card">
-          <figure>
-            <img src="designs/powder_dispenser.png" alt="CAD Rendering" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
-            <figcaption>CAD rendering of custom powder dispenser</figcaption>
-          </figure>
-          <figure>
-            <img src="designs/powder_dispenser.gif" alt="Real Part" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
-            <figcaption>Real implementation of the powder dispenser</figcaption>
-          </figure>
-          <div class="design-desc">
-            <h3>Powder Dispenser</h3>
-            <p>The powder dispenser is designed to dispense photoinitiators into photopolymer inks during the processing portion of the self-driving lab. The system uses a stepper motor to turn gears that allow powder to be dispensed. The speed of the motor and the number of revolutions determine the amount of powder dispensed. See the self-driving lab project page for more details.</p>
-            <p><a href="powder-dispenser-process.html" class="design-process-link">View detailed design process and iterations →</a></p>
-          </div>
-        </div>
-        
         <!-- Mass Flow Plug (MFP) Rake 1 -->
         <div class="design-card">
+          <div class="design-tags">
+            <span class="design-tag">Metal 3D Printing</span>
+            <span class="design-tag">3D Sketching</span>
+            <span class="design-tag">Thermal Design</span>
+            <span class="design-tag">Water Cooling</span>
+            <span class="design-tag">Air Flow</span>
+            <span class="design-tag">Instrumentation</span>
+            <span class="design-tag">Mechanical Design</span>
+          </div>
           <figure>
             <img src="designs/tall_rake_iso.png" alt="CAD Rendering" class="design-image" onclick="openLightbox(this.src, this.alt)">
             <figcaption>CAD rendering of mass flow plug (MFP) rake</figcaption>
@@ -186,6 +247,15 @@
         
         <!-- MFP Rake 2 -->
         <div class="design-card">
+          <div class="design-tags">
+            <span class="design-tag">Metal 3D Printing</span>
+            <span class="design-tag">Thermocouple</span>
+            <span class="design-tag">3D Sketching</span>
+            <span class="design-tag">Water Cooling</span>
+            <span class="design-tag">Air Flow</span>
+            <span class="design-tag">Instrumentation</span>
+            <span class="design-tag">Mechanical Design</span>
+          </div>
           <figure>
             <img src="designs/short_rake_iso.png" alt="CAD Rendering" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
             <figcaption>CAD rendering of MFP rake, alternate version</figcaption>
@@ -197,6 +267,29 @@
           <div class="design-desc">
             <h3>MFP Rake 2</h3>
             <p>Alternative MFP rake with more complex water and air flow channels. In addition, a thermocouple is integrated to measure the temperature during testing.</p>
+          </div>
+        </div>
+        
+        <!-- QUbeSat Hardware -->
+        <div class="design-card">
+          <div class="design-tags">
+            <span class="design-tag">CAD</span>
+            <span class="design-tag">System Integration</span>
+            <span class="design-tag">Rapid Prototyping</span>
+            <span class="design-tag">Additive Manufacturing</span>
+            <span class="design-tag">Team Project</span>
+          </div>
+          <figure>
+            <img src="designs/CubeSat.PNG" alt="QUbeSat CAD" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
+            <figcaption>CAD rendering of QUbeSat</figcaption>
+          </figure>
+          <figure>
+            <img src="designs/cubesat_real_photo.jpg" alt="QUbeSat Real" class="design-image-large" onclick="openLightbox(this.src, this.alt)">
+            <figcaption>Real-world implementation of QUbeSat</figcaption>
+          </figure>
+          <div class="design-desc">
+            <h3>QUbeSat Hardware</h3>
+            <p>Custom CubeSat designed and fabricated for the ASEE Zone I conference. The project involved full CAD modeling, system integration, and hands-on assembly, demonstrating skills in rapid prototyping and collaborative engineering.</p>
           </div>
         </div>
       </div>

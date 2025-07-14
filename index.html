@@ -25,6 +25,7 @@
   <div id="sidebar-overlay" class="sidebar-overlay"></div>
   <nav id="sidebar" class="sidebar">
     <button id="close-sidebar" class="close-sidebar">&times;</button>
+    <div class="sidebar-spacer"></div>
     <ul>
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
@@ -46,6 +47,13 @@
       <span></span>
       <span></span>
     </button>
+    <!-- Animated arrow and callout for hamburger -->
+    <div id="hamburger-callout" class="hamburger-callout">
+      <svg id="hamburger-arrow" class="hamburger-arrow" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M44 24H12M12 24l8-8M12 24l8 8" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="hamburger-callout-text">View projects and designs here</span>
+    </div>
     <h1>Marcus Rocco Fratarcangeli</h1>
   </header>
   <section class="hero" data-animate>

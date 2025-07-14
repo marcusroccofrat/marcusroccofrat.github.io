@@ -19,9 +19,8 @@ header {
   background: #001f3f;
   color: white;
   text-align: center;
-  padding: 2rem;
+  padding: 2.5rem 0 2rem 0; /* increased top padding, removed left padding */
   position: relative;
-  padding-left: 60px;
 }
 
 header h1 {
@@ -200,31 +199,77 @@ footer {
   cursor: pointer;
   display: inline-block;
   position: absolute;
-  top: 2rem;
+  top: 1.2rem; /* move hamburger higher */
   left: 2rem;
   z-index: 1100;
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
   padding: 0;
 }
 .hamburger span {
   display: block;
-  width: 28px;
-  height: 4px;
-  margin: 5px auto;
-  background: white;
-  border-radius: 2px;
+  width: 36px;
+  height: 5px;
+  margin: 7px auto;
+  background: #fff;
+  border-radius: 2.5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
   transition: all 0.3s;
 }
+.hamburger:hover span {
+  background: #ffdc00;
+  transform: scale(1.08);
+}
+
+/* Static arrow and callout styles (no animation) */
+.hamburger-callout {
+  display: flex;
+  position: absolute;
+  top: 1.5rem;
+  left: 5.5rem;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1200;
+  /* No background, no border, no box-shadow */
+  padding: 0;
+}
+.hamburger-arrow {
+  /* No animation */
+  filter: drop-shadow(0 2px 6px #00408033);
+}
+.hamburger-callout-text {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+@keyframes arrowBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+@keyframes fadeInCallout {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: none; }
+}
 @media (max-width: 600px) {
-  .sidebar {
-    width: 80vw;
-    min-width: 180px;
-    max-width: 320px;
-  }
   .hamburger {
-    top: 1rem;
+    top: 0.5rem;
     left: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+  .hamburger span {
+    width: 28px;
+    height: 4px;
+    margin: 5px auto;
+  }
+  .hamburger-callout {
+    top: 0.9rem;
+    left: 3.5rem;
+  }
+  .hamburger-callout-text {
+    font-size: 0.95rem;
   }
 }
 
@@ -702,8 +747,9 @@ figcaption {
 }
 .design-desc h3 {
   color: #001f3f;
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 .design-desc p {
   color: #444;
@@ -733,6 +779,32 @@ figcaption {
   .design-image {
     max-width: 95vw;
   }
+}
+
+/* Design card technical tags */
+.design-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.design-tag {
+  display: inline-block;
+  background: #e6f0fa;
+  color: #004080;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: 1.2em;
+  padding: 0.22em 0.95em;
+  letter-spacing: 0.01em;
+  box-shadow: 0 1px 4px rgba(0,32,64,0.07);
+  border: 1px solid #b3d1f7;
+  user-select: none;
+  transition: background 0.2s, color 0.2s;
+}
+.design-tag:hover {
+  background: #004080;
+  color: #fff;
 }
 
 .contact-highlight {
@@ -1103,5 +1175,25 @@ figcaption {
   .process-modal-content {
     margin: 1rem;
     padding: 1.5rem;
+  }
+}
+
+/* Sidebar spacer for menu offset */
+.sidebar-spacer {
+  height: 3.5rem;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 1.5rem 0 1.2rem 0;
+  }
+  .hamburger {
+    top: 0.7rem;
+    left: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+  .sidebar-spacer {
+    height: 2.5rem;
   }
 }
