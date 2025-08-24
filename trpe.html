@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcus Rocco Fratarcangeli - tRPE</title>
+  <link rel="icon" type="image/x-icon" href="assets/profile.jpg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+  <nav id="sidebar" class="sidebar">
+    <button id="close-sidebar" class="close-sidebar">&times;</button>
+    <div class="sidebar-nav-spacer"></div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="designs.html">Designs</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="sidebar-social">
+      <a href="mailto:mrf6@gatech.edu" title="Email" target="_blank" aria-label="Email">
+        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01L12 13 20 4.01V4H4zm16 2.236l-7.071 7.071a1 1 0 0 1-1.414 0L4 6.236V20h16V6.236z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/marcusfratarcangeli/" title="LinkedIn" target="_blank" aria-label="LinkedIn">
+        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.381-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg>
+      </a>
+    </div>
+  </nav>
+  <header>
+    <button id="open-sidebar" class="hamburger" aria-label="Open navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <h1>Marcus Rocco Fratarcangeli</h1>
+  </header>
+  <section id="tRPE" class="card" data-animate>
+    <h2>tRPE</h2>
+    <p>    Rate of perceived exertion (RPE) is a metric used to quantify the intensity of an exercise. It is a subjective measure that is tracked after each set of an exercise is completed. The RPE scale is from 1 to 10, with 10 being maxiumum effort. However, in practice, a scale of 5-10 is used as it is very challenging to estimate the lower intensities. In addition, the normal method to determine RPE is based on reps in reserve (RIR). The two metrics are inversely related in that an RPE of seven would imply that there were three reps in reserve for that set.</p>
+        
+    <p>    One of the inherent issues with RPE is the failure to properly estimate the true value for various reasons,
+    such as ego, adrenaline, excitement, etc. This leads to false data being logged which will lead to poor future training. This effect is magnified when an athlete is incorrectly reporting RPE to their coach or trainer, as the trainer has no inuition as to the true feeling or exertion of their client during the lift.</p>     
+
+    <p>    Therefore, the tRPE system is intended to: 1) Create a user-friendly application to find key barbell kinemetics and metrics during a powerlift and 2) Use the metrics to create a model capable of estimating the "True RPE" of the lift. </p>    
+    <p>     The project is currently a work in progress and the working features are shown below. The marker detection and metric algorithm are working, however, significant data must be collected to create a RPE model. This aspect of the project is still in the works.</p>
+
+    <h3>Media and Documents</h3>
+    <div style="font-weight:bold; margin:1.2em 0;">Below are some images and videos demonstrating the current functions of the tRPE system.</div>
+    <figure>
+      <img src="projects/trpe/tRPE_video_method1.drawio.png" alt="tRPE Flow" class="project-image">
+      <figcaption>Flowchart of first step of tRPE system: finding metrics from video input.</figcaption>
+    </figure>
+    <figure>
+        <video controls class="project-video">
+          <source src="projects/trpe/video_demo_cropped.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption>Demonstration of marker detection during a lift.</figcaption>
+      </figure>
+    <figure>
+        <img src="projects/trpe/raw_data_plot_8_23_25.png" alt="tRPE Raw Data" class="project-image">
+        <figcaption>Raw ArUco marker translational data.</figcaption>
+    </figure>
+    <figure>
+        <img src="projects/trpe/output_plot_8_23_25.png" alt="tRPE Output" class="project-image">
+        <figcaption>Kinematics of the previous lift. Red area signifies the concentric phases of the repititions.</figcaption>
+    </figure>
+    <figure>
+        <img src="projects/trpe/repmetrics_plot_8_23_25.png" alt="tRPE Per-rep Metrics" class="project-image">
+        <figcaption>Key per-rep metrics of the lift.</figcaption>
+      </figure>
+    
+  </section>
+
+  <footer>
+    <p>© 2025 Marcus Rocco Fratarcangeli. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

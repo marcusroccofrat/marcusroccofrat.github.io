@@ -340,6 +340,7 @@ footer {
   margin: 2rem auto;
   max-width: 1000px;
   transition: box-shadow 0.3s;
+  position: relative;
 }
 .card:hover {
   box-shadow: 0 4px 32px rgba(0,32,64,0.12);
@@ -1196,4 +1197,28 @@ figcaption {
   .sidebar-spacer {
     height: 2.5rem;
   }
+}
+
+.project-status {
+  position: absolute;
+  top: 1.2em;
+  right: 1.2em;
+  display: inline-block;
+  padding: 0.3em 1em;
+  border-radius: 1em;
+  font-size: 0.95em;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.project-status.completed {
+  background: #2ecc40;
+  color: #fff;
+}
+
+.project-status.in-progress {
+  background: #ffb300;
+  color: #fff;
 }
